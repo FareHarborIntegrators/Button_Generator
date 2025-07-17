@@ -89,10 +89,10 @@ function InputCard({setText, setBtnLink, btnStyle, btnLocation, setBtnLocation, 
             <label htmlFor="side-left" className={radioStyles}>Side Left</label>
           </div> */}
         </div>
-        <div className="m-2 p-2">
+        {/* <div className="m-2 p-2">
           <input type="checkbox" name="bias-left" id="bias-left" checked={isLeft} onChange={() => setIsLeft()}/>
           <label className="pl-2" htmlFor="bias-left">Bias Left</label>
-        </div>
+        </div> */}
       </div>
             
     </div>

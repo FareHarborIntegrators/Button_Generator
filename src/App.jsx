@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import ButtonDemoCard from './buttonDemoCard';
 import InputCard from './inputCard'
 import OutputCard from './outputCard';
-import TitleBar from './TitleBar';
+import TitleBar from './titleBar';
 import './App.css'
 
 function App() {

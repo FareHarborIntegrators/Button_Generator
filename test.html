@@ -1,0 +1,227 @@
+<script> 
+document.addEventListener("DOMContentLoaded", function() {
+
+    let p = parent.window.document;
+    let fhStyleSheet = p.createElement('link');
+    fhStyleSheet.href = 'https://fh-kit.com/buttons/v2/?orange=bf582c';
+    fhStyleSheet.rel = 'stylesheet';
+    fhStyleSheet.type = 'text/css';
+    p.body.appendChild(fhStyleSheet); 
+
+    const heroTitle = document.querySelector(".hero-deluxe__title");
+    const fhFixedButton = p.createElement('a');
+
+    fhFixedButton.href = 'https://fareharbor.com/embeds/book/tourism-kamloops/?full-items=yes&flow=1426100';
+    fhFixedButton.className = 'fh-button-true-flat-orange';
+    fhFixedButton.innerHTML = 'BOOK NOW';
+    fhFixedButton.style = 'z-index: 999999 !important; border-radius: 5px !important; background-color: #bf582c; color: #fff; font-family: sofia-pro, sans-serif; font-size: .9375rem; font-weight: 700; margin: 20px auto !important; width: 200px !important; display: block !important;';
+    fhFixedButton.id = 'fhFixedButton';
+
+    if (heroTitle) {
+        heroTitle.insertAdjacentElement("afterend", fhFixedButton);
+    }
+
+    const decorationDiv = document.querySelector('.hero-deluxe__decoration');
+
+    if (decorationDiv) {
+        decorationDiv.style = 'z-index: 20 !important; pointer-events: none !important;'
+    }
+
+    const svgElement = document.querySelector('.hero-deluxe__path');
+    if (svgElement) {
+        svgElement.style = 'top: 60px !important; position: relative !important; pointer-events: none !important;';
+    }
+
+});
+</script>
+
+decorationDiv.style.position = 'relative'; // Needed for z-index to take effect
+
+<a href="#" class="fh-button-flat fh-fixed--bottom fh-icon--calendar-check">Book Now</a>
+
+<script> 
+    var p = parent.window.document;
+    fhScript = p.createElement('script');
+    fhScript.src = "https://fareharbor.com/embeds/api/v1/?autolightframe=yes";
+    p.body.appendChild(fhScript); 
+    fhStyleSheet = p.createElement('link');
+    fhStyleSheet.href = 'https://fh-kit.com/buttons/v2/?blue=3396D6';
+    fhStyleSheet.rel = 'stylesheet';
+    fhStyleSheet.type = 'text/css';
+    p.body.appendChild(fhStyleSheet); 
+    fhFixedButton = p.createElement('a');
+    fhFixedButton.href = 'BOOKINGLINK';
+    fhFixedButton.className = 'fh-button-true-flat-blue fh-shape--square fh-icon--check-square fh-fixed--bottom';
+    fhFixedButton.innerHTML = 'BOOK NOW';
+    fhFixedButton.style = 'z-index: 10 !important';
+    fhFixedButton.id = 'fhFixedButton';
+    if (!p.getElementById('editor') && !p.getElementById('fhFixedButton')){
+        p.querySelector('.widget-html-html-1').style = 'height:0px !important;';
+        p.body.appendChild(fhFixedButton);
+    }
+</script>
+
+<script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
+<script> 
+document.addEventListener("DOMContentLoaded", function() {
+
+    const currentUrl = window.location.href.trim();
+    let bookingLink = 'https://fareharbor.com/embeds/book/covecreekfarm/?full-items=yes'
+
+    if (
+        currentUrl === 'https://www.covecreekfarm.com/events/' ||
+        currentUrl === 'https://www.covecreekfarm.com/events/birthday-party/' ||
+        currentUrl === 'https://www.covecreekfarm.com/play-barn/' ||
+        currentUrl === 'https://www.covecreekfarm.com/events/axe-throwing/' ||
+        currentUrl === 'https://www.covecreekfarm.com/events/pavillion-birthday-party/' ||
+        currentUrl === 'https://www.covecreekfarm.com/events/private-birthday-party/' ||
+        currentUrl === 'https://www.covecreekfarm.com/field-trips/' ||
+        currentUrl === 'https://www.covecreekfarm.com/pumpkin-patch/'
+    ) {
+
+        if(currentUrl === 'https://www.covecreekfarm.com/events/'){
+            //Keep default flow booking link
+        } else if (currentUrl === 'https://www.covecreekfarm.com/events/birthday-party/'){
+            bookingLink = 'https://fareharbor.com/embeds/book/covecreekfarm/?full-items=yes&flow=1423587'
+
+        } else if (currentUrl === 'https://www.covecreekfarm.com/play-barn/'){
+            bookingLink = 'https://fareharbor.com/embeds/book/covecreekfarm/items/643474/?full-items=yes&flow=1422261'
+
+        } else if (currentUrl === 'https://www.covecreekfarm.com/events/axe-throwing/'){
+            bookingLink = 'https://fareharbor.com/embeds/book/covecreekfarm/items/643207/?full-items=yes&flow=1422261'
+
+        } else if (currentUrl === 'https://www.covecreekfarm.com/events/pavillion-birthday-party/'){
+            bookingLink = 'https://fareharbor.com/embeds/book/covecreekfarm/items/643204/?full-items=yes&flow=1423587'
+
+        } else if (currentUrl === 'https://www.covecreekfarm.com/events/private-birthday-party/'){
+            bookingLink = 'https://fareharbor.com/embeds/book/covecreekfarm/?full-items=yes&flow=1423587'
+
+        } else if (currentUrl === 'https://www.covecreekfarm.com/field-trips/'){
+            bookingLink = 'https://fareharbor.com/embeds/book/covecreekfarm/items/643478/?full-items=yes&flow=1422261'
+
+        } else if (currentUrl === 'https://www.covecreekfarm.com/pumpkin-patch/'){
+            bookingLink = 'https://fareharbor.com/embeds/book/covecreekfarm/items/643466/?full-items=yes&flow=1422261'
+        }
+
+        let p = parent.window.document;
+
+        // Add stylesheet
+        let fhStyleSheet = p.createElement('link');
+        fhStyleSheet.href = 'https://fh-kit.com/buttons/v2/?red=9b0000';
+        fhStyleSheet.rel = 'stylesheet';
+        fhStyleSheet.type = 'text/css';
+        p.body.appendChild(fhStyleSheet); 
+
+        // Find target element
+        const heroExcerpt = document.querySelector(".hero__excerpt");
+
+        // Create the wrapper div
+        const wrapperDiv = p.createElement('div');
+        wrapperDiv.style = 'width: 100%; display: flex; justify-content: center; margin-top: 20px; margin-bottom: 20px;';
+
+        // Create the button
+        const fhFixedButton = p.createElement('a');
+        fhFixedButton.href = bookingLink;
+        fhFixedButton.className = 'fh-button-true-flat-red fh-shape--round';
+        fhFixedButton.innerHTML = 'BOOK NOW';
+        fhFixedButton.style = 'z-index: 10 !important; background-color: #9b0000; color: #fff;';
+        fhFixedButton.id = 'fhFixedButton';
+
+        // Append button to wrapper div
+        wrapperDiv.appendChild(fhFixedButton);
+
+        // Insert the wrapper after the hero excerpt
+        if (heroExcerpt) {
+            console.log("Found hero title");
+            heroExcerpt.insertAdjacentElement("afterend", wrapperDiv);
+        }
+    }
+});
+</script>
+
+<script> 
+    var p = parent.window.document;
+    fhScript = p.createElement('script');
+    fhScript.src = "https://fareharbor.com/embeds/api/v1/?autolightframe=yes";
+    p.body.appendChild(fhScript); 
+    fhStyleSheet = p.createElement('link');
+    fhStyleSheet.href = 'https://fh-kit.com/buttons/v2/?blue=3396D6';
+    fhStyleSheet.rel = 'stylesheet';
+    fhStyleSheet.type = 'text/css';
+    p.body.appendChild(fhStyleSheet); 
+    fhFixedButton = p.createElement('a');
+    fhFixedButton.href = 'BOOKINGLINK';
+    fhFixedButton.className = 'fh-button-true-flat-blue fh-shape--square fh-icon--check-square fh-fixed--bottom';
+    fhFixedButton.innerHTML = 'BOOK NOW';
+    fhFixedButton.style = 'z-index: 10 !important';
+    fhFixedButton.id = 'fhFixedButton';
+    if (!p.getElementById('editor') && !p.getElementById('fhFixedButton')){
+        p.querySelector('.widget-html-html-1').style = 'height:0px !important;';
+    
+    }
+</script>
+
+
+<script> 
+    var p = parent.window.document;
+    fhScript = p.createElement('script');
+    fhScript.src = "https://fareharbor.com/embeds/api/v1/?autolightframe=yes";
+    p.body.appendChild(fhScript); 
+    fhStyleSheet = p.createElement('link');
+    fhStyleSheet.href = 'https://fh-kit.com/buttons/v2/?blue=3396D6';
+    fhStyleSheet.rel = 'stylesheet';
+    fhStyleSheet.type = 'text/css';
+    p.body.appendChild(fhStyleSheet); 
+    fhFixedButton = p.createElement('a');
+    fhFixedButton.href = 'https://fareharbor.com/embeds/book/walkingtourspvp/?full-items=yes';
+    fhFixedButton.className = 'fh-button-true-flat fh-icon—calendar-check fh-fixed--bottom';
+    fhFixedButton.innerHTML = 'BOOK NOW';
+    fhFixedButton.style = 'z-index: 10 !important';
+    fhFixedButton.id = 'fhFixedButton';
+    p.body.appendChild(fhFixedButton);
+</script>
+
+<script> 
+    var p = parent.window.document;
+    fhScript = p.createElement('script');
+    fhScript.src = "https://fareharbor.com/embeds/api/v1/?autolightframe=yes";
+    p.body.appendChild(fhScript); 
+    fhStyleSheet = p.createElement('link');
+    fhStyleSheet.href = 'https://fh-kit.com/buttons/v2/?blue=0075C1';
+    fhStyleSheet.rel = 'stylesheet';
+    fhStyleSheet.type = 'text/css';
+    p.body.appendChild(fhStyleSheet); 
+    fhFixedButton = p.createElement('a');
+    fhFixedButton.href = 'https://fareharbor.com/embeds/book/pinelakewaterpark/?full-items=yes';
+    fhFixedButton.className = 'fh-button-true-flat-blue fh-icon—calendar-check fh-fixed--bottom';
+    fhFixedButton.innerHTML = 'BOOK NOW';
+    fhFixedButton.style = 'z-index: 10 !important';
+    fhFixedButton.id = 'fhFixedButton';
+    if (!p.getElementById('editor') && !p.getElementById('fhFixedButton')){
+        p.querySelector('.widget-html-html-1').style = 'height:0px !important;';
+        p.body.appendChild(fhFixedButton);
+    }
+</script>
+
+<script> 
+    var p = parent.window.document;
+    fhScript = p.createElement('script');
+    fhScript.src = "https://fareharbor.com/embeds/api/v1/?autolightframe=yes";
+    p.body.appendChild(fhScript); 
+    fhStyleSheet = p.createElement('link');
+    fhStyleSheet.href = 'https://fh-kit.com/buttons/v2/?brown=ae997c';
+    fhStyleSheet.rel = 'stylesheet';
+    fhStyleSheet.type = 'text/css';
+    p.body.appendChild(fhStyleSheet); 
+    fhFixedButton = p.createElement('a');
+    fhFixedButton.href = 'https://fareharbor.com/embeds/book/justchillinyachtcharters/?full-items=yes';
+    fhFixedButton.className = 'fh-button-true-flat-brown fh-icon—calendar-check fh-fixed--side';
+    fhFixedButton.innerHTML = 'BOOK NOW';
+    fhFixedButton.style = 'z-index: 10 !important';
+    fhFixedButton.id = 'fhFixedButton';
+    if (!p.getElementById('editor') && !p.getElementById('fhFixedButton')){
+        p.querySelector('.widget-html-html-1').style = 'height:0px !important;';
+        p.body.appendChild(fhFixedButton);
+    }
+</script>
+

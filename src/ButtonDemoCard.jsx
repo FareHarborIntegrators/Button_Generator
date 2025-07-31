@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ButtonDemoCard({btnText, btnLink, btnIcon, setIcon, btnShape, setBtnShape, btnSize,setBtnSize, btnStyle, setBtnStyle, colorQuery, color, btnLocation}) {
+function ButtonDemoCard({btnText, btnLink, btnIcon, setIcon, btnShape, setBtnShape, btnSize,setBtnSize, btnStyle, setBtnStyle, colorQuery, btnColor, btnLocation}) {
 
   const allBtnIcons = ['cal', 'gift', 'map', 'check', 'arrow', 'ticket', 'check-bubble', 'dollar', 'clock', 'user', 'users', 'lock', 'phone', 'camera', 'beer', 'anchor', 'ship', 'location', 'caret-right', 'cutlery', 'bus', 'taxi', 'shopping-cart', 'life-ring', 'bed', 'check-square', 'calendar-check'];
   const allBtnShapes = ['default', 'round', 'square'];

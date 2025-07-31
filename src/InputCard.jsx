@@ -1,6 +1,7 @@
 import { useState } from "react";
+import ColorPicker from "./ColorPicker";
 
-function InputCard({setText, setBtnLink, btnStyle, btnLocation, setBtnLocation, isLeft, setIsLeft, setBtnStyle, setColorQuery, setColor} ) {
+function InputCard({setText, setBtnLink, btnStyle, btnLocation, setBtnLocation, isLeft, setIsLeft, setBtnStyle, setColorQuery, btnColor, setBtnColor} ) {
 
   let inputStyles = 'border-gray-300 border-solid border-2 m-2 pl-1';
   const titleStyles= 'flex justify-center text-2xl ml-5 mr-5 mb-10';
@@ -17,7 +18,7 @@ function InputCard({setText, setBtnLink, btnStyle, btnLocation, setBtnLocation, 
     setColorQuery(colorQueryInput.target.value);
   }
   const handleColorInput = (colorInput) => {
-    setColor(colorInput.target.value);
+    setBtnColor(colorInput.target.value);
   }
 
   const handleBtnStyleInput = (event) => {
@@ -27,8 +28,7 @@ function InputCard({setText, setBtnLink, btnStyle, btnLocation, setBtnLocation, 
   const handleBtnLocationInput = (event) => {
     setBtnLocation(event.target.value);
   }
-
-  
+ 
 
 
   return (
@@ -54,7 +54,10 @@ function InputCard({setText, setBtnLink, btnStyle, btnLocation, setBtnLocation, 
         </div>
         <div className='flex flex-col justify-center items-center m-3'>
           <h3 className={h3Stylings}>Set Your Hex Value</h3>
-          <input type="text-input" className={inputStyles} onChange={(e) => handleColorInput(e)} placeholder='0a79e9'/>
+          <div className="flex justify-center items-center">
+            {/* <input type="text-input" className={inputStyles} onChange={(e) => handleColorInput(e)} placeholder='0a79e9'/> */}
+            <ColorPicker color={btnColor} setColor={setBtnColor} />
+          </div>
         </div>
       </div>
       <div className='flex flex-col justify-center items-center'>

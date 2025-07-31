@@ -1,9 +1,9 @@
 import React from 'react'
 
-function OutputCard({btnText, btnLink, btnIcon, btnShape, btnSize, btnStyle, colorQuery, color, btnLocation, isLeft}) {
+function OutputCard({btnText, btnLink, btnIcon, btnShape, btnSize, btnStyle, colorQuery, btnColor, btnLocation, isLeft}) {
 
   let anchorString = `<a href="${btnLink}" class="fh-button${btnStyle !== '' ? `-${btnStyle}` : ``}-${colorQuery} fh-icon--${btnIcon} fh-shape--${btnShape} fh-size--${btnSize} ${!isLeft ? `fh-fixed--${btnLocation}` : ''}">${btnText}</a>`;
-  let styleString = `<link rel="stylesheet" href="https://fh-kit.com/buttons/v2/?${colorQuery}=${color}" type="text/css" media="screen" />`
+  let styleString = `<link rel="stylesheet" href="https://fh-kit.com/buttons/v2/?${colorQuery}=${btnColor}" type="text/css" media="screen" />`
   const titleStyles= 'flex justify-center text-2xl ml-5 mr-5 mb-10';
   const h3Stylings = 'text-lg font-bold mb-2'
 

@@ -21,8 +21,9 @@ const ColorPicker = ({ color, setColor }) => {
 
   const styles = {
     color: {
-      width: '36px',
-      height: '14px',
+      width: '120px',
+      height: '20px',
+      margin: '2px',
       borderRadius: '2px',
       background: previewColor, // HEX string
     },

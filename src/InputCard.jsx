@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ColorPicker from "./ColorPicker";
 
-function InputCard({setText, setBtnLink, btnStyle, btnLocation, setBtnLocation, isLeft, setIsLeft, setBtnStyle, setColorQuery, btnColor, setBtnColor} ) {
+function InputCard({setText, setBtnLink, btnStyle, btnLocation, setBtnLocation, isLeft, setIsLeft, setBtnStyle, setColorQuery, btnColor, setBtnColor, gradientColorOne, setGradientColorOne, gradientColorTwo, setGradientColorTwo, applyGradient, setApplyGradient} ) {
 
   let inputStyles = 'border-gray-300 border-solid border-2 m-2 pl-1';
   const titleStyles= 'flex justify-center text-2xl ml-5 mr-5 mb-10';
@@ -60,6 +60,25 @@ function InputCard({setText, setBtnLink, btnStyle, btnLocation, setBtnLocation, 
           </div>
         </div>
       </div>
+
+      <div className='flex justify-around items-center mb-3'>
+        <div className='flex flex-col justify-center items-center m-3'>
+          <h3 className={h3Stylings}>Make a Gradient</h3>
+          <div className="flex justify-center items-center">
+            <div className="m-4">
+              <ColorPicker color={gradientColorOne} setColor={setGradientColorOne}/>
+            </div>
+            <div className="m-4">
+              <ColorPicker color={gradientColorTwo} setColor={setGradientColorTwo}/>
+            </div>
+            <div className="m-2 p-2">
+              <input type="checkbox" name="apply-gradient" id="apply-gradient" checked={applyGradient} onChange={() => setApplyGradient(!applyGradient)}/>
+              <label className="pl-2" htmlFor="apply-gradient">Apply Gradient</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className='flex flex-col justify-center items-center'>
         <h3 className={h3Stylings}>Button Location</h3>
         <div className="flex flex-wrap justify-center items-center">

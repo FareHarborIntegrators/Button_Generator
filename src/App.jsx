@@ -14,6 +14,9 @@ function App() {
   const [btnStyle, setBtnStyle] = useState('2d');
   const [colorQuery, setColorQuery] = useState('blue');
   const [btnColor, setBtnColor] = useState('0a79e9');
+  const [gradientColorOne, setGradientColorOne] = useState('F34469');
+  const [gradientColorTwo, setGradientColorTwo] = useState('61C55D');
+  const [applyGradient, setApplyGradient] = useState(false);
   const [btnLocation, setBtnLocation] = useState('');
   const [isLeft, setIsLeft] = useState(false);
 
@@ -42,6 +45,12 @@ function App() {
   }
   const changeColor = (choice) => {
     setBtnColor(choice);
+  }
+  const changeGradientColorOne = (choice) => {
+    setGradientColorOne(choice);
+  }
+  const changeGradientColorTwo = (choice) => {
+    setGradientColorTwo(choice);
   }
   const changeBtnLocation = (choice) => {
     setBtnLocation(choice);
@@ -85,6 +94,9 @@ function App() {
           isLeft={isLeft} setIsLeft={changeIsLeft}
           colorQuery={colorQuery} setColorQuery={changeColorQuery}
           btnColor={btnColor} setBtnColor={changeColor}
+          gradientColorOne={gradientColorOne} setGradientColorOne={setGradientColorOne}
+          gradientColorTwo={gradientColorTwo} setGradientColorTwo={setGradientColorTwo}
+          applyGradient={applyGradient} setApplyGradient={setApplyGradient}
           />
         <OutputCard 
           btnText={btnText}

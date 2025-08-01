@@ -109,6 +109,9 @@ function App() {
           btnColor={btnColor}
           btnLocation={btnLocation}
           isLeft={isLeft}
+          applyGradient={applyGradient}
+          gradientColorOne={gradientColorOne}
+          gradientColorTwo={gradientColorTwo}
           />
 
       </div>

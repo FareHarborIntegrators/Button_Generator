@@ -14,8 +14,8 @@ function App() {
   const [btnStyle, setBtnStyle] = useState('2d');
   const [colorQuery, setColorQuery] = useState('blue');
   const [btnColor, setBtnColor] = useState('0a79e9');
-  const [gradientColorOne, setGradientColorOne] = useState('F34469');
-  const [gradientColorTwo, setGradientColorTwo] = useState('61C55D');
+  const [gradientColorOne, setGradientColorOne] = useState('FD150C');
+  const [gradientColorTwo, setGradientColorTwo] = useState('FFC800');
   const [applyGradient, setApplyGradient] = useState(false);
   const [gradientAngle, setGradientAngle] = useState(135);
   const [btnLocation, setBtnLocation] = useState('');

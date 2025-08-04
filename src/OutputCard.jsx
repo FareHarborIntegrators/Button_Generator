@@ -2,7 +2,7 @@ import React from 'react'
 
 function OutputCard({btnText, btnLink, btnIcon, btnShape, btnSize, btnStyle, colorQuery, btnColor, btnLocation, isLeft, applyGradient, gradientColorOne, gradientColorTwo, gradientAngle}) {
 
-  let anchorString = `<a href="${btnLink}" class="fh-button${btnStyle !== '' ? `-${btnStyle}` : ``}-${colorQuery} fh-icon--${btnIcon} fh-shape--${btnShape} fh-size--${btnSize} ${!isLeft ? `fh-fixed--${btnLocation}` : ''}">${btnText}</a>`;
+  let anchorString = `<a href="${btnLink}" class="fh-button${btnStyle !== '' ? `-${btnStyle}` : ``}-${colorQuery} fh-icon--${btnIcon} fh-shape--${btnShape} fh-size--${btnSize} ${!isLeft ? `fh-fixed--${btnLocation}` : ''}"${applyGradient ? ` style="linear-gradient(${gradientAngle}deg, #${gradientColorOne}, #${gradientColorTwo})`: ''}>${btnText}</a>`;
   let styleString = `<link rel="stylesheet" href="https://fh-kit.com/buttons/v2/?${colorQuery}=${btnColor}" type="text/css" media="screen" />`
   const titleStyles= 'flex justify-center text-2xl ml-5 mr-5 mb-10';
   const h3Stylings = 'text-lg font-bold mb-2'
@@ -14,7 +14,7 @@ function OutputCard({btnText, btnLink, btnIcon, btnShape, btnSize, btnStyle, col
     : {
         zIndex: '1000' // gray-500
       };
-      
+
   return (
     <div className='bg-[#1F2837] bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 text-white flex flex-col justify-start items-center w-full p-6 m-6 rounded-lg shadow-xl'>
       <h1 className={titleStyles}>Output</h1>

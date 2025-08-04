@@ -17,6 +17,7 @@ function App() {
   const [gradientColorOne, setGradientColorOne] = useState('F34469');
   const [gradientColorTwo, setGradientColorTwo] = useState('61C55D');
   const [applyGradient, setApplyGradient] = useState(false);
+  const [gradientAngle, setGradientAngle] = useState(135);
   const [btnLocation, setBtnLocation] = useState('');
   const [isLeft, setIsLeft] = useState(false);
 
@@ -45,12 +46,6 @@ function App() {
   }
   const changeColor = (choice) => {
     setBtnColor(choice);
-  }
-  const changeGradientColorOne = (choice) => {
-    setGradientColorOne(choice);
-  }
-  const changeGradientColorTwo = (choice) => {
-    setGradientColorTwo(choice);
   }
   const changeBtnLocation = (choice) => {
     setBtnLocation(choice);
@@ -97,6 +92,7 @@ function App() {
           gradientColorOne={gradientColorOne} setGradientColorOne={setGradientColorOne}
           gradientColorTwo={gradientColorTwo} setGradientColorTwo={setGradientColorTwo}
           applyGradient={applyGradient} setApplyGradient={setApplyGradient}
+          gradientAngle={gradientAngle} setGradientAngle={setGradientAngle}
           />
         <OutputCard 
           btnText={btnText}
@@ -112,6 +108,7 @@ function App() {
           applyGradient={applyGradient}
           gradientColorOne={gradientColorOne}
           gradientColorTwo={gradientColorTwo}
+          gradientAngle={gradientAngle}
           />
 
       </div>
@@ -123,6 +120,10 @@ function App() {
           btnStyle={btnStyle} setBtnStyle={changeBtnStyle}
           colorQuery={colorQuery} setColorQuery={changeColorQuery}
           btnColor={btnColor} setColor={changeColor}
+          applyGradient={applyGradient}
+          gradientColorOne={gradientColorOne}
+          gradientColorTwo={gradientColorTwo}
+          gradientAngle={gradientAngle}
           /> 
       </div>
   )

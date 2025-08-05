@@ -69,10 +69,9 @@ function InputCard({setText, setBtnLink, btnStyle, btnLocation, setBtnLocation, 
 
       <div className='flex justify-around items-center mb-3'>
         <div className='flex flex-col justify-center items-center m-3'>
-          <h3 className={h3Stylings}>Make a Gradient</h3>
           <div className="m-2 p-2">
               <input type="checkbox" name="apply-gradient" id="apply-gradient" checked={applyGradient} onChange={() => setApplyGradient(!applyGradient)}/>
-              <label className="pl-2" htmlFor="apply-gradient">Apply Gradient</label>
+              <label className={`${h3Stylings} pl-2`} htmlFor="apply-gradient">Apply Gradient</label>
             </div>
           <div className="flex justify-center items-center">
             <div className={gradientInputStyles}>

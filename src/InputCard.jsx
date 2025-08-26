@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ColorPicker from "./ColorPicker";
 
-function InputCard({setText, setBtnLink, btnStyle, btnLocation, setBtnLocation, isLeft, setIsLeft, setBtnStyle, setColorQuery, btnColor, setBtnColor, gradientColorOne, setGradientColorOne, gradientColorTwo, setGradientColorTwo, applyGradient, setApplyGradient, gradientAngle, setGradientAngle} ) {
+function InputCard({setText, setBtnLink, btnStyle, btnLocation, setBtnLocation, btnVisibility, setBtnVisibility, isLeft, setIsLeft, setBtnStyle, setColorQuery, btnColor, setBtnColor, gradientColorOne, setGradientColorOne, gradientColorTwo, setGradientColorTwo, applyGradient, setApplyGradient, gradientAngle, setGradientAngle} ) {
 
   let inputStyles = 'border-gray-300 border-solid border-2 m-2 pl-1';
   const titleStyles= 'flex justify-center text-2xl ml-5 mr-5 mb-10';
@@ -28,6 +28,10 @@ function InputCard({setText, setBtnLink, btnStyle, btnLocation, setBtnLocation, 
 
   const handleBtnLocationInput = (event) => {
     setBtnLocation(event.target.value);
+  }
+
+    const handleBtnVisibility = (event) => {
+    setBtnVisibility(event.target.value);
   }
 
   const handleGradientAngleInput = (event) => {
@@ -126,6 +130,25 @@ function InputCard({setText, setBtnLink, btnStyle, btnLocation, setBtnLocation, 
           <input type="checkbox" name="bias-left" id="bias-left" checked={isLeft} onChange={() => setIsLeft()}/>
           <label className="pl-2" htmlFor="bias-left">Bias Left</label>
         </div> */}
+      </div>
+
+
+      <div className='flex flex-col justify-center items-center'>
+        <h3 className={h3Stylings}>Button Visibility</h3>
+        <div className="flex flex-wrap justify-center items-center">
+          <div className="mx-1 my-3">
+            <input name="btnVisibility" id="bothDesktopAndMobile" type="radio" value="bothDesktopAndMobile" className="peer hidden" checked={btnVisibility === 'bothDesktopAndMobile'} onChange={(e) => handleBtnVisibility(e)}/>
+            <label htmlFor="bothDesktopAndMobile" className={radioStyles}>Desktop & Mobile</label>
+          </div>
+          <div className="mx-1 my-3">
+            <input name="btnVisibility" id="desktopOnly" type="radio" value="mobile" className="peer hidden" checked={btnVisibility === 'mobile'} onChange={(e) => handleBtnVisibility(e)}/>
+            <label htmlFor="desktopOnly" className={radioStyles}>Desktop Only</label>
+          </div>
+          <div className="mx-1 my-3">
+            <input name="btnVisibility" id="mobileOnly" type="radio" value="desktop" className="peer hidden" checked={btnVisibility === 'desktop'} onChange={(e) => handleBtnVisibility(e)}/>
+            <label htmlFor="mobileOnly" className={radioStyles}>Mobile Only</label>
+          </div>
+        </div>
       </div>
             
     </div>

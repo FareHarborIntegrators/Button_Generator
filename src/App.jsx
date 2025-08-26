@@ -19,6 +19,7 @@ function App() {
   const [applyGradient, setApplyGradient] = useState(false);
   const [gradientAngle, setGradientAngle] = useState(135);
   const [btnLocation, setBtnLocation] = useState('');
+  const [btnVisibility, setBtnVisibility] = useState('bothDesktopAndMobile');
   const [isLeft, setIsLeft] = useState(false);
 
   const changeText = (choice) => {
@@ -49,6 +50,9 @@ function App() {
   }
   const changeBtnLocation = (choice) => {
     setBtnLocation(choice);
+  }
+  const changeBtnVisibility = (choice) => {
+    setBtnVisibility(choice);
   }
   const changeIsLeft = () => {
     setIsLeft(!isLeft);
@@ -86,6 +90,7 @@ function App() {
           btnSize={btnSize} setBtnSize={changeBtnSize} 
           btnStyle={btnStyle} setBtnStyle={changeBtnStyle}
           btnLocation={btnLocation} setBtnLocation={changeBtnLocation}
+          btnVisibility={btnVisibility} setBtnVisibility={changeBtnVisibility}
           isLeft={isLeft} setIsLeft={changeIsLeft}
           colorQuery={colorQuery} setColorQuery={changeColorQuery}
           btnColor={btnColor} setBtnColor={changeColor}
@@ -104,6 +109,7 @@ function App() {
           colorQuery={colorQuery}
           btnColor={btnColor}
           btnLocation={btnLocation}
+          btnVisibility={btnVisibility}
           isLeft={isLeft}
           applyGradient={applyGradient}
           gradientColorOne={gradientColorOne}

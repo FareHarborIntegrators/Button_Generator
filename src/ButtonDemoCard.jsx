@@ -31,6 +31,7 @@ function ButtonDemoCard({btnText, btnLink, btnIcon, setIcon, btnShape, setBtnSha
           }
         </div>
       </div>
+
       <div className={columnDivStyles}>
         <h3 className={titleStyles}>Choose Your Button Shape</h3>
         <div className={buttonDivStyles}>
@@ -38,8 +39,10 @@ function ButtonDemoCard({btnText, btnLink, btnIcon, setIcon, btnShape, setBtnSha
             <a key={index} className={`fh-button${btnStyle !== '' ? `-${btnStyle}` : ``}-${colorQuery} fh-shape--${shape} fh-size--${btnSize} fh-icon--${btnIcon}`} style={gradientStyle} onClick={() => setBtnShape(shape)}>{btnText}</a>
             ))
           }
+
         </div>
       </div>
+
       <div className={columnDivStyles}>
         <h3 className={titleStyles}>Choose Your Button Size</h3>
         <div className={buttonDivStyles}>
@@ -59,7 +62,6 @@ function ButtonDemoCard({btnText, btnLink, btnIcon, setIcon, btnShape, setBtnSha
         </div>
       </div>
     </div>
-  )
-}
+  )}
 
 export default ButtonDemoCard

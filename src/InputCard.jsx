@@ -1,156 +1,66 @@
 import { useState } from "react";
-import ColorPicker from "./ColorPicker";
+import { useMediaQuery } from './Hooks/useMediaQuery';
+import BasicIcon from "./Icons/BasicIcon";
+import AppearanceIcon from "./Icons/AppearanceIcon";
+import IconsIcon from "./Icons/IconsIcon";  
+import BasicTab from './BasicTab';
+import IconsTab from './IconsTab';
+import AppearanceTab from './AppearanceTab';
 
-function InputCard({setText, setBtnLink, btnStyle, btnLocation, setBtnLocation, btnVisibility, setBtnVisibility, isLeft, setIsLeft, setBtnStyle, setColorQuery, btnColor, setBtnColor, gradientColorOne, setGradientColorOne, gradientColorTwo, setGradientColorTwo, applyGradient, setApplyGradient, gradientAngle, setGradientAngle} ) {
+function InputCard() {
 
-  let inputStyles = 'border-gray-300 border-solid border-2 m-2 pl-1';
-  const titleStyles= 'flex justify-center text-2xl ml-5 mr-5 mb-10';
-  const radioStyles= 'peer-checked:bg-blue-600 peer-checked:text-white border border-blue-600 text-blue-600 px-4 py-2 rounded cursor-pointer transition';
-  const h3Stylings = 'text-lg font-bold mb-1'
-  const gradientInputStyles = 'm-4 flex flex-col justify-center items-center'
+  const [activeTab, setActiveTab] = useState('basic');
+  const activeColor = '#0a79e9';
+  const isAboveXSmall = useMediaQuery('(min-width: 500px)');
 
-  const handleBtnTxtInput = (textInput) => {
-    setText(textInput.target.value);
-  }
-  const handleBtnLinkInput = (linkInput) => {
-    setBtnLink(linkInput.target.value);
-  }
-  const handleColorQueryInput = (colorQueryInput) => {
-    setColorQuery(colorQueryInput.target.value);
-  }
-  const handleColorInput = (colorInput) => {
-    setBtnColor(colorInput.target.value);
-  }
-
-  const handleBtnStyleInput = (event) => {
-    setBtnStyle(event.target.value);
-  };
-
-  const handleBtnLocationInput = (event) => {
-    setBtnLocation(event.target.value);
-  }
-
-    const handleBtnVisibility = (event) => {
-    setBtnVisibility(event.target.value);
-  }
-
-  const handleGradientAngleInput = (event) => {
-    let correctedAngle = event.target.value % 360;
-    setGradientAngle(correctedAngle);
-  }
- 
-
+  const tabs = [
+    { id: 'basic', label: 'Button Config.', icon: <BasicIcon activeTab={activeTab} activeColor={activeColor} />, Component: BasicTab },
+    { id: 'appearance', label: 'Appearance', icon: <AppearanceIcon activeTab={activeTab} activeColor={activeColor} />, Component: AppearanceTab },
+    { id: 'icons', label: 'Icons', icon: <IconsIcon activeTab={activeTab} activeColor={activeColor} />, Component: IconsTab },
+  ];
 
   return (
-    <div className='bg-[#1F2837] bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 text-white flex flex-col justify-start items-center w-full p-6 m-6 rounded-lg shadow-xl'>
-      
-      <h1 className={titleStyles}>Input</h1>
-      
-      <div className="flex justify-around items-center mb-3">
-        <div className='flex flex-col justify-center items-center m-3'>
-          <h3 className={h3Stylings}>Enter Your Button Text</h3>
-          <input type="text-input" className={inputStyles} onChange={(e) => handleBtnTxtInput(e)} placeholder='Book Now'/>
-        </div>
-        <div className='flex flex-col justify-center items-center m-3'>
-          <h3 className={h3Stylings}>Enter Your Button Link</h3>
-          <input type="text-input" className={inputStyles} onChange={(e) => handleBtnLinkInput(e)} placeholder='Booking Link'/>
-        </div>
-      </div>
-      
-      <div className='flex justify-around items-center mb-3'>
-        <div className='flex flex-col justify-center items-center m-3'>
-          <h3 className={h3Stylings}>Set Your Color Query</h3>
-          <input type="text-input" className={inputStyles} onChange={(e) => handleColorQueryInput(e)} placeholder='blue'/>
-        </div>
-        <div className='flex flex-col justify-center items-center m-3'>
-          <h3 className={h3Stylings}>Set Your Hex Value</h3>
-          <div className="flex justify-center items-center">
-            {/* <input type="text-input" className={inputStyles} onChange={(e) => handleColorInput(e)} placeholder='0a79e9'/> */}
-            <ColorPicker color={btnColor} setColor={setBtnColor} />
-          </div>
-        </div>
-      </div>
+    <div className="md:overflow-visible h-full flex flex-col justify-start md:justify-start items-start w-full basis-2/3">
+      <div className="relative right-0 w-full h-full">
+        {/* Tab buttons */}
+        <ul className="relative flex flex-wrap px-1.5 py-1.5 list-none rounded-md bg-gray-300" role="tablist">
+          {tabs.map((tab) => (
+            <li key={tab.id} className="z-30 flex-auto text-center">
+              <button
+                onClick={() => setActiveTab(tab.id)}
+                className={`z-30 flex items-center justify-center w-full px-0 py-2 text-xs mb-0 transition-all ease-in-out duration-350 border-0 rounded-md cursor-pointer
+                  ${activeTab === tab.id ? 'text-slate-900 font-semibold bg-white shadow' : 'text-slate-600 bg-inherit'}`}
+                role="tab"
+                aria-selected={activeTab === tab.id}
+                aria-controls={tab.id}
+              >
+                <span className="flex flex-col md:flex-row items-center justify-center">
+                  <div className="flex items-center justify-center">
+                    {tab.icon}
+                  </div>
+                  {isAboveXSmall && <div className="flex items-center justify-center pl-1">
+                    {tab.label}
+                  </div>}
+                </span>
+              </button>
+            </li>
+          ))}
+        </ul>
 
-      <div className='flex justify-around items-center mb-3'>
-        <div className='flex flex-col justify-center items-center m-3'>
-          <div className="m-2 p-2">
-              <input type="checkbox" name="apply-gradient" id="apply-gradient" checked={applyGradient} onChange={() => setApplyGradient(!applyGradient)}/>
-              <label className={`${h3Stylings} pl-2`} htmlFor="apply-gradient">Apply Gradient</label>
+        {/* Tab panels */}
+        <div className="p-5 h-full w-full flex items-center justify-center">
+          {tabs.map(({ id, Component }) => (
+            <div
+              key={id}
+              id={id}
+              role="tabpanel"
+              className={`${activeTab === id ? 'block opacity-100' : 'hidden opacity-0'} h-full w-full transition-opacity ease-in-out duration-350`}
+            >
+              <Component />
             </div>
-          <div className="flex justify-center items-center">
-            <div className={gradientInputStyles}>
-              <div>Gradient Color 1</div>
-              <ColorPicker name="gradient-color-1" id="gradient-color-1" color={gradientColorOne} setColor={setGradientColorOne}/>
-            </div>
-            <div className={gradientInputStyles}>
-              <div>Gradient Color 2</div>
-              <ColorPicker name="gradient-color-2" id="gradient-color-2" color={gradientColorTwo} setColor={setGradientColorTwo}/>
-            </div>
-            <div className={gradientInputStyles}>
-              <label htmlFor="gradient-angle">Angle</label>
-              <input name="gradient-angle" id="gradient-angle" type="number" className={`${inputStyles} w-16`} onChange={(e) => handleGradientAngleInput(e)}/>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
-
-      <div className='flex flex-col justify-center items-center'>
-        <h3 className={h3Stylings}>Button Location</h3>
-        <div className="flex flex-wrap justify-center items-center">
-          <div className="mx-1 my-3">
-            <input name="fixedLocation" id="standard-button" type="radio" value='' className="peer hidden" checked={btnLocation === ''} onChange={(e) => handleBtnLocationInput(e)}/>
-            <label htmlFor="standard-button" className={radioStyles}>Standard Button (No Float)</label>
-          </div>
-          <div className="mx-1 my-3">
-            <input name="fixedLocation" id="top" type="radio" value="top" className="peer hidden" checked={btnLocation === 'top'} onChange={(e) => handleBtnLocationInput(e)}/>
-            <label htmlFor="top" className={radioStyles}>Top</label>
-          </div>
-          {/* <div className="mx-1 my-3">
-            <input name="fixedLocation" id="top-left" type="radio" value="top-left" className="peer hidden" checked={btnLocation === 'top-left'} onChange={(e) => handleBtnLocationInput(e)}/>
-            <label htmlFor="top-left" className={radioStyles}>Top Left</label>
-          </div> */}
-          <div className="mx-1 my-3">
-            <input name="fixedLocation" id="bottom" type="radio" value="bottom" className="peer hidden" checked={btnLocation === 'bottom'} onChange={(e) => handleBtnLocationInput(e)}/>
-            <label htmlFor="bottom" className={radioStyles}>Bottom</label>
-          </div>
-          {/* <div className="mx-1 my-3">
-            <input name="fixedLocation" id="bottom-left" type="radio" value="bottom-left" className="peer hidden" checked={btnLocation === 'bottom-left'} onChange={(e) => handleBtnLocationInput(e)}/>
-            <label htmlFor="bottom-left" className={radioStyles}>Bottom Left</label>
-          </div> */}
-          <div className="mx-1 my-3">
-            <input name="fixedLocation" id="side" type="radio" value="side" className="peer hidden" checked={btnLocation === 'side'} onChange={(e) => handleBtnLocationInput(e)}/>
-            <label htmlFor="side" className={radioStyles}>Side</label>
-          </div>
-          {/* <div className="mx-1 my-3">
-            <input name="fixedLocation" id="side-left" type="radio" value="side-left" className="peer hidden" checked={btnLocation === 'side-left'} onChange={(e) => handleBtnLocationInput(e)}/>
-            <label htmlFor="side-left" className={radioStyles}>Side Left</label>
-          </div> */}
-        </div>
-        {/* <div className="m-2 p-2">
-          <input type="checkbox" name="bias-left" id="bias-left" checked={isLeft} onChange={() => setIsLeft()}/>
-          <label className="pl-2" htmlFor="bias-left">Bias Left</label>
-        </div> */}
-      </div>
-
-
-      <div className='flex flex-col justify-center items-center'>
-        <h3 className={h3Stylings}>Button Visibility</h3>
-        <div className="flex flex-wrap justify-center items-center">
-          <div className="mx-1 my-3">
-            <input name="btnVisibility" id="bothDesktopAndMobile" type="radio" value="bothDesktopAndMobile" className="peer hidden" checked={btnVisibility === 'bothDesktopAndMobile'} onChange={(e) => handleBtnVisibility(e)}/>
-            <label htmlFor="bothDesktopAndMobile" className={radioStyles}>Desktop & Mobile</label>
-          </div>
-          <div className="mx-1 my-3">
-            <input name="btnVisibility" id="desktopOnly" type="radio" value="mobile" className="peer hidden" checked={btnVisibility === 'mobile'} onChange={(e) => handleBtnVisibility(e)}/>
-            <label htmlFor="desktopOnly" className={radioStyles}>Desktop Only</label>
-          </div>
-          <div className="mx-1 my-3">
-            <input name="btnVisibility" id="mobileOnly" type="radio" value="desktop" className="peer hidden" checked={btnVisibility === 'desktop'} onChange={(e) => handleBtnVisibility(e)}/>
-            <label htmlFor="mobileOnly" className={radioStyles}>Mobile Only</label>
-          </div>
-        </div>
-      </div>
-            
     </div>
   )
 }

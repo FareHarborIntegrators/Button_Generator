@@ -15,14 +15,28 @@ function OutputCard({ isLeft }) {
     btnLocation,
     btnActive,
     btnLink,
+    applyGradient,
+    gradientColorOne,
+    gradientColorTwo,
+    gradientAngle,
   } = useButtonContext(); 
 
   const [outputCardBGColor, setOutputCardBGColor] = useState('ffffff');
+
   const outputStyle = {
     backgroundColor: `#${outputCardBGColor}`,
     border: '4px solid #ffffffff',
     boxShadow: '0px 3px 8px 3px rgba(0,0,0,.1)',
   }
+
+    const gradientStyle = applyGradient
+    ? {
+        backgroundImage: `linear-gradient(${gradientAngle}deg, #${gradientColorOne}, #${gradientColorTwo})`,
+        zIndex: '1'
+      }
+    : {
+        zIndex: '1'
+      };
 
   const handleButtonClick = (e) => {
     if (!btnActive) {
@@ -41,7 +55,8 @@ function OutputCard({ isLeft }) {
         </div>
         <div className='rounded-xl flex flex-col justify-center items-center w-full h-full'
               style={outputStyle}>
-          <a href={btnActive ? btnLink : '' } onClick={handleButtonClick} className={`fh-button${btnStyle !== '' ? `-${btnStyle}` : ``}-pop ${!isLeft ? `fh-fixed--${btnLocation}` : ''} fh-font--inherit fh-shape--${btnShape} fh-size--${btnSize}  fh-icon--${btnIcon} ${btnVisibility === 'bothDesktopAndMobile' ? '':`fh-hide--${btnVisibility}`}`}>{btnText}</a>
+          <a href={btnActive ? btnLink : '' } onClick={handleButtonClick} className={`fh-button${btnStyle !== '' ? `-${btnStyle}` : ``}-pop ${!isLeft ? `fh-fixed--${btnLocation}` : ''} fh-font--inherit fh-shape--${btnShape} fh-size--${btnSize}  fh-icon--${btnIcon} ${btnVisibility === 'bothDesktopAndMobile' ? '':`fh-hide--${btnVisibility}`}`} 
+              style={gradientStyle}>{btnText}</a>
         </div>
     </div>
   )

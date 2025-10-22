@@ -35,12 +35,17 @@ function AppearanceTab({}) {
             gradientColorOne, setGradientColorOne,
             gradientColorTwo, setGradientColorTwo,
             applyGradient, setApplyGradient,
-            gradientAngle, setGradientAngle,
+            setGradientAngle,
 
           } = useButtonContext();
 
     const h3Stylings = 'block mb-1 pl-1 text-sm font-medium text-gray-700'
     let inputStyles = 'border-gray-300 border-solid border-2 m-2 pl-1';
+
+    const handleGradientAngleInput = (event) => {
+      let correctedAngle = event.target.value % 360;
+      setGradientAngle(correctedAngle);
+  }
 
 
     return (
@@ -81,7 +86,7 @@ function AppearanceTab({}) {
               <ColorPicker name="gradient-color-2" id="gradient-color-2" color={gradientColorTwo} setColor={setGradientColorTwo}/>
               <div className='flex justify-end items-center w-full'>
                 <label className={h3Stylings} htmlFor="gradient-angle">Angle</label>
-                <input name="gradient-angle" id="gradient-angle" type="number" className={`${inputStyles} w-16`} onChange={(e) => setGradientAngle(e)}/>
+                <input name="gradient-angle" id="gradient-angle" type="number" className={`${inputStyles} w-16`} onChange={(e) => handleGradientAngleInput(e)}/>
               </div>
       
             </div>

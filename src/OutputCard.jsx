@@ -89,8 +89,8 @@ function OutputCard() {
         </div>
         <div className='rounded-xl flex flex-col justify-center items-center w-full h-full'
               style={outputStyle}>
-          <a href={btnActive ? btnLink : '' } onClick={handleButtonClick} className={`fh-button${btnStyle !== '' ? `-${btnStyle}` : ``}-pop ${!isLeft ? `fh-fixed--${btnLocation}` : ''} fh-font--inherit fh-shape--${btnShape} fh-size--${btnSize}  fh-icon--${btnIcon} ${btnVisibility === 'bothDesktopAndMobile' ? '':`fh-hide--${btnVisibility}`}`} 
-              style={{ ...gradientStyle, ...biasLeftStyle }}>{btnText}</a>
+          <a href={btnActive ? btnLink : '' } onClick={handleButtonClick} className={`fh-button${btnStyle !== '' ? `-${btnStyle}` : ``}-pop fh-fixed--${btnLocation} ${(isLeft && (btnLocation !== 'side')) ? `overrideLeft-class` : ''} ${(isLeft && (btnLocation === 'side')) ? `overrideLeftSIDE-class` : ''} fh-font--inherit fh-shape--${btnShape} fh-size--${btnSize}  fh-icon--${btnIcon} ${btnVisibility === 'bothDesktopAndMobile' ? '':`fh-hide--${btnVisibility}`}`} 
+              style={{ ...{ position: isLeft ? 'fixed !important' : '' }, ...gradientStyle, ...biasLeftStyle }}>{btnText}</a>
         </div>
     </div>
   )

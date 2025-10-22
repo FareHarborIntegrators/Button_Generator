@@ -16,7 +16,7 @@
     right: inherit !important; border-radius: 0px 0px 5px 5px !important;
   }
   .overrideGradient-class {
-    background: unset;
+    background: var(--btn-bg) !important;
   }
 }
 

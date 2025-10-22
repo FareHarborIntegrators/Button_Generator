@@ -16,6 +16,13 @@ export const ButtonProvider = ({ children }) => {
   const [btnVisibility, setBtnVisibility] = useState('bothDesktopAndMobile');
   const [btnActive, setBtnActive] = useState(false);
 
+  const [colorQuery, setColorQuery] = useState('blue');
+  const [gradientColorOne, setGradientColorOne] = useState('FD150C');
+  const [gradientColorTwo, setGradientColorTwo] = useState('FFC800');
+  const [applyGradient, setApplyGradient] = useState(false);
+  const [gradientAngle, setGradientAngle] = useState(135);
+  const [isLeft, setIsLeft] = useState(false);
+
   const value = {
     btnText, setBtnText,
     btnLink, setBtnLink,
@@ -27,6 +34,11 @@ export const ButtonProvider = ({ children }) => {
     btnLocation, setBtnLocation,
     btnVisibility, setBtnVisibility,
     btnActive, setBtnActive,
+    gradientColorOne, setGradientColorOne,
+    gradientColorTwo, setGradientColorTwo,
+    applyGradient, setApplyGradient,
+    gradientAngle, setGradientAngle,
+    isLeft, setIsLeft
   };
 
   return (

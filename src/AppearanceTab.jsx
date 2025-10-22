@@ -1,6 +1,7 @@
 import { useButtonContext } from './ButtonContext';
 import RadioDropdown from "./RadioDropdown";
 import StationaryColorPicker from './StationaryColorPicker';
+import ColorPicker from './ColorPicker';
 
 function AppearanceTab({}) {
 
@@ -31,8 +32,15 @@ function AppearanceTab({}) {
             setBtnShape,
             setBtnStyle,
             setBtnSize,
+            gradientColorOne, setGradientColorOne,
+            gradientColorTwo, setGradientColorTwo,
+            applyGradient, setApplyGradient,
+            gradientAngle, setGradientAngle,
 
           } = useButtonContext();
+
+    const h3Stylings = 'block mb-1 pl-1 text-sm font-medium text-gray-700'
+    let inputStyles = 'border-gray-300 border-solid border-2 m-2 pl-1';
 
 
     return (
@@ -61,8 +69,25 @@ function AppearanceTab({}) {
             value={btnStyle}
             onChange={setBtnStyle}
           />
+
+           <div className='flex w-full flex-col justify-start items-start'>
+            <div className='flex justify-start items-center mb-2'>
+              <input type="checkbox" name="apply-gradient" id="apply-gradient" checked={applyGradient} onChange={() => setApplyGradient(!applyGradient)}/>
+              <label className={`${h3Stylings}`} htmlFor="apply-gradient">Apply Gradient</label>
+            </div>
+                
+            <div className="flex gap-2 justify-start items-center w-full">
+              <ColorPicker name="gradient-color-1" id="gradient-color-1" color={gradientColorOne} setColor={setGradientColorOne}/>
+              <ColorPicker name="gradient-color-2" id="gradient-color-2" color={gradientColorTwo} setColor={setGradientColorTwo}/>
+              <div className='flex justify-end items-center w-full'>
+                <label className={h3Stylings} htmlFor="gradient-angle">Angle</label>
+                <input name="gradient-angle" id="gradient-angle" type="number" className={`${inputStyles} w-16`} onChange={(e) => setGradientAngle(e)}/>
+              </div>
+      
+            </div>
+          </div>
         </div>
-      </div>
+    </div>
     )
 }
 

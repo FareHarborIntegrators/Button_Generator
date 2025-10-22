@@ -18,6 +18,8 @@ function BasicTab({}) {
             setBtnColor,
             setBtnLocation,
             setBtnVisibility,
+            isLeft,
+            setIsLeft,
 
           } = useButtonContext();
 
@@ -101,6 +103,17 @@ function BasicTab({}) {
                             <input name="fixedLocation" id="side" type="radio" value="side" className="peer hidden" checked={btnLocation === 'side'} onChange={(e) => handleBtnLocationInput(e)}/>
                             <label htmlFor="side" className={radioStyles}>Side</label>
                         </div>
+                    </div>
+                    <div className='flex justify-start items-center w-full mt-2'>
+                        <input
+                            name='leftBias'
+                            id='leftBias'
+                            type="checkbox"
+                            checked={isLeft}
+                            onChange={()=>setIsLeft(!isLeft)}
+                            className="w-3 h-3 rounded border-2 border-gray-300 peer-checked:bg-blue-600 peer-checked:border-blue-600 transition-colors duration-200 flex items-center justify-center mb-1"
+                        />
+                        <label htmlFor='leftBias' className={h3Stylings}>Bias left</label>
                     </div>
                 </div>
             </div>

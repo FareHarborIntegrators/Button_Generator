@@ -34,6 +34,7 @@ export const ButtonProvider = ({ children }) => {
     btnLocation, setBtnLocation,
     btnVisibility, setBtnVisibility,
     btnActive, setBtnActive,
+    colorQuery, setColorQuery,
     gradientColorOne, setGradientColorOne,
     gradientColorTwo, setGradientColorTwo,
     applyGradient, setApplyGradient,

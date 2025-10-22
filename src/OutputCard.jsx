@@ -3,7 +3,7 @@ import { useButtonContext } from './ButtonContext';
 import ColorPicker from './ColorPicker';
 import CodeOutputModal from './CodeOutputModal';
 
-function OutputCard({ isLeft }) {
+function OutputCard() {
 
    const {
     btnText,
@@ -15,6 +15,7 @@ function OutputCard({ isLeft }) {
     btnLocation,
     btnActive,
     btnLink,
+    isLeft,
     applyGradient,
     gradientColorOne,
     gradientColorTwo,
@@ -29,14 +30,47 @@ function OutputCard({ isLeft }) {
     boxShadow: '0px 3px 8px 3px rgba(0,0,0,.1)',
   }
 
-    const gradientStyle = applyGradient
-    ? {
-        backgroundImage: `linear-gradient(${gradientAngle}deg, #${gradientColorOne}, #${gradientColorTwo})`,
-        zIndex: '1'
-      }
-    : {
-        zIndex: '1'
-      };
+  const gradientStyle = applyGradient ? 
+    {
+      backgroundImage: `linear-gradient(${gradientAngle}deg, #${gradientColorOne}, #${gradientColorTwo})`,
+      zIndex: '1'
+    } : 
+    {
+      zIndex: '1'
+    };
+
+  let biasLeftStyle = {};
+
+  if(isLeft && (btnLocation === 'top')) {
+    biasLeftStyle = {...{
+      position: 'fixed',
+      top: '20px',
+      left: '20px',
+      right: 'auto',
+      zIndex: '100'
+    }};
+  } else if (isLeft && (btnLocation === 'side')) {
+    biasLeftStyle = {...{
+      position: 'fixed',
+      transformOrigin: 'left 0%',
+      margin: 'unset',
+      left: '0px',
+      bottom: 'unset',
+      top: '50%',
+      transform: 'rotate(270deg) translateX(-50%)',
+      right: 'inherit',
+      borderRadius: '0px 0px 5px 5px',
+      zIndex: '100'
+    }};
+  } else if (isLeft && (btnLocation === 'bottom')) {
+    biasLeftStyle = {...{
+      position: 'fixed',
+      bottom: '20px',
+      left: '20px',
+      right: 'auto',
+      zIndex: '100'
+    }};
+  }
 
   const handleButtonClick = (e) => {
     if (!btnActive) {
@@ -56,7 +90,7 @@ function OutputCard({ isLeft }) {
         <div className='rounded-xl flex flex-col justify-center items-center w-full h-full'
               style={outputStyle}>
           <a href={btnActive ? btnLink : '' } onClick={handleButtonClick} className={`fh-button${btnStyle !== '' ? `-${btnStyle}` : ``}-pop ${!isLeft ? `fh-fixed--${btnLocation}` : ''} fh-font--inherit fh-shape--${btnShape} fh-size--${btnSize}  fh-icon--${btnIcon} ${btnVisibility === 'bothDesktopAndMobile' ? '':`fh-hide--${btnVisibility}`}`} 
-              style={gradientStyle}>{btnText}</a>
+              style={{ ...gradientStyle, ...biasLeftStyle }}>{btnText}</a>
         </div>
     </div>
   )

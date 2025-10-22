@@ -10,7 +10,7 @@ export const ButtonProvider = ({ children }) => {
   const [btnIcon, setBtnIcon] = useState('calendar-check');
   const [btnShape, setBtnShape] = useState('default');
   const [btnSize, setBtnSize] = useState('default');
-  const [btnStyle, setBtnStyle] = useState('2d');
+  const [btnStyle, setBtnStyle] = useState('true-flat');
   const [btnColor, setBtnColor] = useState('0a79e9'); // hex (without #)
   const [btnLocation, setBtnLocation] = useState('');
   const [btnVisibility, setBtnVisibility] = useState('bothDesktopAndMobile');

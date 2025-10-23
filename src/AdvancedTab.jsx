@@ -14,9 +14,24 @@ function AdvancedTab({}) {
     btnIcon,
     btnVisibility,
     btnLocation,
+    applyGradient,
+    gradientAngle,
+    gradientColorOne,
+    gradientColorTwo,
+    isLeft,
   } = useButtonContext();
 
-  let anchorString = `<a href="${btnLink}" class="fh-button${btnStyle !== '' ? `-${btnStyle}` : ``}-pop fh-font--inherit fh-icon--${btnIcon} fh-shape--${btnShape} fh-size--${btnSize} ${btnLocation === '' ? '' : `fh-fixed--${btnLocation}`} ${btnVisibility === 'bothDesktopAndMobile' ? '':`fh-hide--${btnVisibility}`}">${btnText}</a>`;
+  let gradientStyleString = applyGradient ? `linear-gradient(${gradientAngle}deg, #${gradientColorOne}, #${gradientColorTwo}) !important` : '';
+  let locationStyleString = '';
+
+  if (isLeft && (btnLocation === 'top' || btnLocation === 'bottom')) {
+    locationStyleString = 'left: 20px !important; right: auto !important;';
+  } else if (isLeft && (btnLocation === 'side')) {
+    locationStyleString = 'transform-origin: left 0% !important; margin: unset !important; left: 0px !important; bottom: unset !important; top: 50%; transform: rotate(270deg) translateX(-50%) !important; right: inherit !important; border-radius: 0px 0px 5px 5px !important;'
+  }
+
+  let buttonStyleString = `style="${locationStyleString} ${gradientStyleString}"` 
+  let anchorString = `<a href="${btnLink}" class="fh-button${btnStyle !== '' ? `-${btnStyle}` : ``}-pop fh-font--inherit fh-icon--${btnIcon} fh-shape--${btnShape} fh-size--${btnSize} ${btnLocation === '' ? '' : `fh-fixed--${btnLocation}`} ${btnVisibility === 'bothDesktopAndMobile' ? '':`fh-hide--${btnVisibility}`}" ${(isLeft || applyGradient) ? buttonStyleString : ''}>${btnText}</a>`;
   let styleString = `<link rel="stylesheet" href="https://fh-kit.com/buttons/v2/?pop=${btnColor}" type="text/css" media="screen" />`
   const APIString = `<script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>`;
   const h3Stylings = 'block mb-1 text-sm font-medium text-gray-700';

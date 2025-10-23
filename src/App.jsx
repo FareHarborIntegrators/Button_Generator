@@ -1,6 +1,6 @@
 import { ButtonProvider } from './ButtonContext';
-import InputCard from './InputCard'
-import OutputCard from './OutputCard';
+import InputCard from './InputCard';
+import OutputCard from './outputCard';
 import TitleBar from './TitleBar';
 // import Footer from './Footer';
 import DynamicStyleSheetLoader from './Hooks/DynamicStyleSheetLoader';

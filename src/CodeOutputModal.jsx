@@ -10,7 +10,7 @@ function CodeOutputModal() {
   const closeModal = () => setIsOpen(false);
 
   return (
-    <div className="flex items-center justify-center bg-gray-100">
+    <div className="flex items-center justify-center bg-gray-100 dark:bg-dark-2">
     
         <button onClick={openModal} 
                 className='px-2 py-1 text-xs bg-fh-blue text-white rounded hover:bg-blue-700 transition flex items-center gap-1'>

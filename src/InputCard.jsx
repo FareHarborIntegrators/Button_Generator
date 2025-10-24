@@ -23,13 +23,13 @@ function InputCard() {
     <div className="md:overflow-visible h-full flex flex-col justify-start md:justify-start items-start w-full basis-2/3">
       <div className="relative right-0 w-full h-full">
         {/* Tab buttons */}
-        <ul className="relative flex flex-wrap px-1.5 py-1.5 list-none rounded-md bg-gray-300" role="tablist">
+        <ul className="relative flex flex-wrap px-1.5 py-1.5 list-none rounded-md bg-gray-300 dark:bg-dark-2" role="tablist">
           {tabs.map((tab) => (
             <li key={tab.id} className="z-30 flex-auto text-center">
               <button
                 onClick={() => setActiveTab(tab.id)}
                 className={`z-30 flex items-center justify-center w-full px-0 py-2 text-xs mb-0 transition-all ease-in-out duration-350 border-0 rounded-md cursor-pointer
-                  ${activeTab === tab.id ? 'text-slate-900 font-semibold bg-white shadow' : 'text-slate-600 bg-inherit'}`}
+                  ${activeTab === tab.id ? 'text-slate-900 dark:text-dark-text font-semibold bg-white dark:bg-dark-3 shadow' : 'text-slate-600 dark:text-dark-text bg-inherit'}`}
                 role="tab"
                 aria-selected={activeTab === tab.id}
                 aria-controls={tab.id}

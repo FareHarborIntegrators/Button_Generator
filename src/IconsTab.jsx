@@ -2,7 +2,7 @@ import { useButtonContext } from './ButtonContext';
 
 function IconsTab({}) {
     const allBtnIcons = ['cal', 'gift', 'map', 'check', 'arrow', 'ticket', 'check-bubble', 'dollar', 'clock', 'user', 'users', 'lock', 'phone', 'camera', 'beer', 'anchor', 'ship', 'location', 'caret-right', 'cutlery', 'bus', 'taxi', 'shopping-cart', 'life-ring', 'bed', 'check-square', 'calendar-check'];
-    const titleStyles= 'block mb-1 text-sm font-medium text-gray-700';
+    const titleStyles= 'block mb-1 text-sm font-medium text-gray-700 dark:text-dark-text';
     const {
             btnStyle,
             btnShape,

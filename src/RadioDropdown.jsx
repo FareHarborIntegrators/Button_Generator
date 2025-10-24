@@ -15,11 +15,14 @@ export default function RadioDropdown({ label, options, value, onChange }) {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+  
+
+      const h3Stylings = 'block mb-1 text-sm font-medium text-gray-700 dark:text-dark-text'
 
   return (
     <div className="relative w-full max-w-xs" ref={dropdownRef}>
       {/* Label */}
-      {label && <label className="block mb-1 text-sm font-medium text-gray-700">{label}</label>}
+      {label && <label className={`${h3Stylings}`}>{label}</label>}
 
       {/* Trigger Button */}
       <button

@@ -24,6 +24,13 @@
 
 @theme {
   --color-fh-blue: oklch(58.52% 0.191 255.30);
+  --color-dark-highlight: oklch(100.00% 0.000 0);
+  --color-dark-text: oklch(85.38% 0.012 264.50);
+  --color-dark-shadow: oklch(20.96% 0.000 0);
+  --color-dark-1: oklch(86.69% 0.000 0);
+  --color-dark-2: oklch(57.31% 0.000 0);
+  --color-dark-3: oklch(42.85% 0.000 0);
+  --color-dark-4: oklch(30.96% 0.000 0);
 
   --animate-fade-in-down: fade-in-down 0.4s ease-out forwards;
   --animate-fade-out-up: fade-out-up 0.4s ease-in forwards;

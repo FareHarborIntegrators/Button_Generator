@@ -79,11 +79,11 @@ function OutputCard() {
   };
 
   return (
-    <div className={`flex flex-col justify-start items-center w-full min-h-48 max-h-48 h-48 md:min-h-96 md:max-h-96 md:h-full bg-gray-300 border border-gray-200 rounded-lg basis-1/3 ml-4 mr-4 p-2`}>
-        <div className='flex justify-between items-center w-full pl-2 pr-2 mb-1 rounded-md bg-gray-300'>
+    <div className={`flex flex-col justify-start items-center w-full min-h-48 max-h-48 h-48 md:min-h-96 md:max-h-96 md:h-full bg-gray-300 dark:bg-dark-2 border border-gray-200 dark:border-dark-3 rounded-lg basis-1/3 ml-4 mr-4 p-2`}>
+        <div className='flex justify-between items-center w-full pl-2 pr-2 mb-1 rounded-md bg-gray-300 dark:bg-dark-2'>
           <CodeOutputModal />
           <div className='flex justify-end items-center'>
-            <span className='block mb-1 pl-1 text-xs font-xs text-gray-700 pr-2'>Background Color: </span>
+            <span className='block mb-1 pl-1 text-xs font-xs dark:text-dark-text text-gray-700 pr-2'>Background Color: </span>
             <ColorPicker color={outputCardBGColor} setColor={setOutputCardBGColor}/>
           </div>
         </div>

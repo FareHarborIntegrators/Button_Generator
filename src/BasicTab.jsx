@@ -33,11 +33,12 @@ function BasicTab({}) {
     }
     const handleBtnLinkInput = (linkInput) => {
         setBtnLink(linkInput.target.value);
-        setIsValidUrl(DEFAULT_FLOW_REGEX.test(linkInput.target.value) || 
-                    FLOW_START_ON_CALENDAR_REGEX.test(linkInput.target.value) || 
-                    ITEM_REGEX.test(linkInput.target.value) || 
-                    AVAILABILITY_REGEX.test(linkInput.target.value) 
-                    );
+        // setIsValidUrl(DEFAULT_FLOW_REGEX.test(linkInput.target.value) || 
+        //             FLOW_START_ON_CALENDAR_REGEX.test(linkInput.target.value) || 
+        //             ITEM_REGEX.test(linkInput.target.value) || 
+        //             AVAILABILITY_REGEX.test(linkInput.target.value) 
+        //             );
+        setIsValidUrl(false);
     }
     const handleBtnLocationInput = (event) => {
         setBtnLocation(event.target.value);
@@ -56,7 +57,7 @@ function BasicTab({}) {
     
     useEffect(() => {
         if(!isValidURL){
-            setBtnActive(true);
+            setBtnActive(false);
         }
 
     }, [isValidURL])
@@ -72,14 +73,14 @@ function BasicTab({}) {
                     <h3 className={h3Stylings}>FareHarbor Booking Link</h3>
                     <input type="text-input" className={inputStyles} onChange={(e) => handleBtnLinkInput(e)} placeholder='Booking Link'/>
                         {/* PREVIEW LIGHTFRAME BUTTON */}
-                        {(hasMounted && isValidURL) && (
+                        {/* {(hasMounted && isValidURL) && (
                             <div className={`transition-all duration-500 ease-out transform absolute top-18 left-0 
                                 ${isValidURL ? 'animate-[var(--animate-fade-in-down)]' : 'animate-[var(--animate-fade-out-up)]'} 
                                 ${!hasMounted && !isValidURL ? 'opacity-0 pointer-events-none' : ''}`}
                             >
                                 <ToggleSwitch enabled={btnActive} setEnabled={setBtnActive} label="Preview Lightframe" />
                             </div>
-                        )}
+                        )} */}
                 </div>
             </div>
         

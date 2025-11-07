@@ -21,7 +21,7 @@ function AdvancedTab({}) {
     isLeft,
   } = useButtonContext();
 
-  let gradientStyleString = applyGradient ? `linear-gradient(${gradientAngle}deg, #${gradientColorOne}, #${gradientColorTwo}) !important` : '';
+  let gradientStyleString = applyGradient ? `background: linear-gradient(${gradientAngle}deg, #${gradientColorOne}, #${gradientColorTwo}) !important;` : '';
   let locationStyleString = '';
 
   if (isLeft && (btnLocation === 'top' || btnLocation === 'bottom')) {

@@ -1,6 +1,6 @@
 import { ButtonProvider } from './ButtonContext';
 import InputCard from './InputCard';
-import OutputCard from './outputCard';
+import OutputCard from './OutputCard';
 import TitleBar from './TitleBar';
 import { ThemeToggle } from './ThemeToggle';
 // import Footer from './Footer';

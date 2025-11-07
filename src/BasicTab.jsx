@@ -56,7 +56,7 @@ function BasicTab({}) {
     
     useEffect(() => {
         if(!isValidURL){
-            setBtnActive(false);
+            setBtnActive(true);
         }
 
     }, [isValidURL])
@@ -71,15 +71,15 @@ function BasicTab({}) {
                 <div className='relative flex flex-col justify-center items-start w-full'>
                     <h3 className={h3Stylings}>FareHarbor Booking Link</h3>
                     <input type="text-input" className={inputStyles} onChange={(e) => handleBtnLinkInput(e)} placeholder='Booking Link'/>
-                        {/* DISABLED PREVIEW LIGHTFRAME BUTTON */}
-                        {/* {(hasMounted && isValidURL) && (
+                        {/* PREVIEW LIGHTFRAME BUTTON */}
+                        {(hasMounted && isValidURL) && (
                             <div className={`transition-all duration-500 ease-out transform absolute top-18 left-0 
                                 ${isValidURL ? 'animate-[var(--animate-fade-in-down)]' : 'animate-[var(--animate-fade-out-up)]'} 
                                 ${!hasMounted && !isValidURL ? 'opacity-0 pointer-events-none' : ''}`}
                             >
                                 <ToggleSwitch enabled={btnActive} setEnabled={setBtnActive} label="Preview Lightframe" />
                             </div>
-                        )} */}
+                        )}
                 </div>
             </div>
         

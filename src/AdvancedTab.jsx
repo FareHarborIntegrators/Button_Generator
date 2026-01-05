@@ -31,7 +31,7 @@ function AdvancedTab({}) {
   }
 
   let buttonStyleString = `style="${locationStyleString} ${gradientStyleString}"` 
-  let anchorString = `<a href="${btnLink}" class="fh-button${btnStyle !== '' ? `-${btnStyle}` : ``}-pop fh-font--inherit fh-icon--${btnIcon} fh-shape--${btnShape} fh-size--${btnSize} ${btnLocation === '' ? '' : `fh-fixed--${btnLocation}`} ${btnVisibility === 'bothDesktopAndMobile' ? '':`fh-hide--${btnVisibility}`}" ${(isLeft || applyGradient) ? buttonStyleString : ''}>${btnText}</a>`;
+  let anchorString = `<a href="${btnLink}" class="fh-button${btnStyle !== '' ? `-${btnStyle}` : ``}-pop fh-font--inherit ${btnIcon === 'no-icon' ? '' : `fh-icon--${btnIcon}`} fh-shape--${btnShape} fh-size--${btnSize} ${btnLocation === '' ? '' : `fh-fixed--${btnLocation}`} ${btnVisibility === 'bothDesktopAndMobile' ? '':`fh-hide--${btnVisibility}`}" ${(isLeft || applyGradient) ? buttonStyleString : ''}>${btnText}</a>`;
   let styleString = `<link rel="stylesheet" href="https://fh-kit.com/buttons/v2/?pop=${btnColor}" type="text/css" media="screen" />`
   const APIString = `<script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>`;
   const h3Stylings = 'block mb-1 text-sm font-medium text-gray-700';

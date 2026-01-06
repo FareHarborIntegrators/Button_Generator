@@ -89,7 +89,7 @@ function OutputCard() {
         </div>
         <div className='rounded-xl flex flex-col justify-center items-center w-full h-full'
               style={outputStyle}>
-          <a href={btnActive ? btnLink : '' } onClick={handleButtonClick} className={`fh-button${btnStyle !== '' ? `-${btnStyle}` : ``}-pop fh-fixed--${btnLocation} ${(isLeft && (btnLocation !== 'side')) ? `overrideLeft-class` : ''} ${(isLeft && (btnLocation === 'side')) ? `overrideLeftSIDE-class` : ''} ${applyGradient ? 'overrideGradient-class' : ''} fh-font--inherit fh-shape--${btnShape} fh-size--${btnSize}  ${btnIcon === 'no-icon' ? '' : `fh-icon--${btnIcon}`} ${btnVisibility === 'bothDesktopAndMobile' ? '':`fh-hide--${btnVisibility}`}`} 
+          <a href={btnActive ? btnLink : '#' } className={`fh-button${btnStyle !== '' ? `-${btnStyle}` : ``}-pop fh-fixed--${btnLocation} ${(isLeft && (btnLocation !== 'side')) ? `overrideLeft-class` : ''} ${(isLeft && (btnLocation === 'side')) ? `overrideLeftSIDE-class` : ''} ${applyGradient ? 'overrideGradient-class' : ''} fh-font--inherit fh-shape--${btnShape} fh-size--${btnSize}  ${btnIcon === 'no-icon' ? '' : `fh-icon--${btnIcon}`} ${btnVisibility === 'bothDesktopAndMobile' ? '':`fh-hide--${btnVisibility}`}`} 
               style={{'--btn-bg': applyGradient
                 ? `linear-gradient(${gradientAngle}deg, #${gradientColorOne}, #${gradientColorTwo})`
                 : 'none', ...gradientStyle, ...biasLeftStyle }}>{btnText}</a>

@@ -23,7 +23,7 @@ function BasicTab({}) {
 
           } = useButtonContext();
 
-    const FAREHARBOR_URL_REGEX = /^https:\/\/(demo\.)?fareharbor\.com\/.+$/;
+    const FAREHARBOR_URL_REGEX = /^https:\/\/fareharbor\.com\/.+$/;
     
     const handleBtnTxtInput = (textInput) => {
         setBtnText(textInput.target.value);

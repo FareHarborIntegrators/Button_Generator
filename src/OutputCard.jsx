@@ -72,11 +72,6 @@ function OutputCard() {
     }};
   }
 
-  const handleButtonClick = (e) => {
-    if (!btnActive) {
-      e.preventDefault(); // Prevent the link from navigating
-    }
-  };
 
   return (
     <div className={`flex flex-col justify-start items-center w-full min-h-48 max-h-48 h-48 md:min-h-96 md:max-h-96 md:h-full bg-gray-300 dark:bg-dark-2 border border-gray-200 dark:border-dark-3 rounded-lg basis-1/3 ml-4 mr-4 p-2`}>

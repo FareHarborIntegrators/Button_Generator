@@ -1,3 +1,16 @@
+# Integrator Button Generator
+An internal app that can be used to quickly style and generate floater code for client's websites. Includes all button customization available to integrators including color, shape, stylings, and icon selection. Integrators can also preview the lightframe through the app to verify functionality.
+
+# Requirements
+Node.js 18+ (developing using Node 23)
+npm (comes with Node)
+
+# Local Setup
+```
+npm install
+npm run dev
+```
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
